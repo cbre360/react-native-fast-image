@@ -168,8 +168,7 @@ class FastImageViewManager extends SimpleViewManager<ImageViewWithUrl> implement
 
     @Override
     public void onDropViewInstance(ImageViewWithUrl view) {
-        // This will cancel existing requests.
-        Glide.clear(view);
+
         final String key = view.glideUrl.toString();
         OkHttpProgressGlideModule.forget(key);
         List<ImageViewWithUrl> viewsForKey = VIEWS_FOR_URLS.get(key);
